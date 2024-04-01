@@ -1,5 +1,5 @@
 {
-  "name": "webp-converter",
+  "name": "nestjs-webp-converter",
   "version": "0.0.1",
   "description": "NestJS module to convert images to webp",
   "main": "index.ts",
@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@nestjs/common": "^9.0.0 || ^10.0.0",
+    "@xhmikosr/bin-wrapper": "^12.0.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
