@@ -44,7 +44,7 @@ export class WebpConverterService {
   }
 
   private mapOptions(options: WebpConverterOptions): string[] {
-    const args = [];
+    const args: string[] = [];
     if (options.quality < 0 || options.quality > 100) {
       throw new InvalidOptionsError('quality');
     } else {
