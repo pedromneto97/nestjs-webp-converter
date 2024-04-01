@@ -1,26 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import BinWrapper from '@xhmikosr/bin-wrapper';
+import { execFileSync } from 'child_process';
 import path from 'path';
 import { InvalidOptionsError, WebpConverterOptions } from './options';
 
 @Injectable()
 export class WebpConverterService {
-  private bin: BinWrapper;
-
-  constructor() {
-    const url =
-      'https://github.com/pedromneto97/nestjs-webp-converter/raw/main/vendor/';
-
-    this.bin = new BinWrapper()
-      .src(`${url}win/x64/cwebp.exe`, 'win32', 'x64')
-      .src(`${url}linux/x64/cwebp`, 'linux', 'x64')
-      .src(`${url}osx/arm64/cwebp`, 'darwin', 'arm64')
-      .dest(path.join('vendor'))
-      .use(process.platform === 'win32' ? 'cwebp.exe' : 'cwebp');
-
-    this.bin.runCheck(['--version']);
-  }
-
   /**
    * Convert an image to WebP format.
    *
@@ -40,7 +24,25 @@ export class WebpConverterService {
   ): Promise<void> {
     const args = [input, ...this.mapOptions(options), '-o', output];
 
-    await this.bin.run(args);
+    execFileSync(this.getBinPath(), args);
+  }
+
+  private getBinPath(): string {
+    const vendorPath = '../vendor';
+    const paths = {
+      win32: {
+        x64: `${vendorPath}/win32/x64/cwebp.exe`,
+      },
+      linux: {
+        x64: `${vendorPath}/linux/x64/cwebp`,
+      },
+      darwin: {
+        arm64: `${vendorPath}/osx/arm64/cwebp`,
+        x64: `${vendorPath}/osx/x64/cwebp`,
+      },
+    };
+
+    return path.join(__dirname, paths[process.platform][process.arch]);
   }
 
   private mapOptions(options: WebpConverterOptions): string[] {

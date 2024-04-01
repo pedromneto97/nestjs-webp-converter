@@ -2,21 +2,24 @@
   "name": "nestjs-webp-converter",
   "version": "0.0.1",
   "description": "NestJS module to convert images to webp",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "author": {
     "name": "Pedro de Mattos Mariano Mendes Neto",
     "email": "pedromneto97@gmail.com"
   },
   "license": "MIT",
-  "dependencies": {
-    "@xhmikosr/bin-wrapper": "^12.0.0"
-  },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
+    "@nestjs/schematics": "^10.1.1",
     "@nestjs/testing": "^10.3.7",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.2",
@@ -30,7 +33,9 @@
     "reflect-metadata": "0.2.2",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.3"
   },
   "peerDependencies": {
@@ -40,5 +45,22 @@
     "@nestjs/common": {
       "optional": false
     }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }
