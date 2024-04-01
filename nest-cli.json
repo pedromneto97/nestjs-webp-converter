@@ -12,6 +12,7 @@
       }
     }
   },
+  "sourceRoot": "src",
   "compilerOptions": {
     "webpack": true
   }

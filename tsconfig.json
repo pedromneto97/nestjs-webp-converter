@@ -10,7 +10,6 @@
     "outDir": "./dist",
     "incremental": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
     "esModuleInterop": true
   },
   "include": ["src/**/*"],
