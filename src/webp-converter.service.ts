@@ -18,7 +18,7 @@ export class WebpConverterService {
       .dest(path.join('vendor'))
       .use(process.platform === 'win32' ? 'cwebp.exe' : 'cwebp');
 
-    this.bin.runCheck('--version');
+    this.bin.runCheck(['--version']);
   }
 
   /**
