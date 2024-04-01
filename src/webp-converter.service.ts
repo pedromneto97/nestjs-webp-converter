@@ -15,14 +15,23 @@ export class WebpConverterService {
   async convert(
     input: string,
     output: string,
-    options: WebpConverterOptions = {
+    options?: Partial<WebpConverterOptions>,
+  ): Promise<void> {
+    const defaultOptions: WebpConverterOptions = {
       quality: 80,
       multiThread: true,
       lossless: false,
       compressionMethod: 6,
-    },
-  ): Promise<void> {
-    const args = [input, ...this.mapOptions(options), '-o', output];
+    };
+
+    const args = [
+      input,
+      ...this.mapOptions(
+        !!options ? { ...defaultOptions, ...options } : defaultOptions,
+      ),
+      '-o',
+      output,
+    ];
 
     execFileSync(this.getBinPath(), args);
   }
