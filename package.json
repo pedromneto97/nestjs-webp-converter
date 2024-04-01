@@ -1,6 +1,6 @@
 {
   "name": "nestjs-webp-converter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NestJS module to convert images to webp",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
