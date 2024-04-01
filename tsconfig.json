@@ -1,21 +1,18 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": false,
-    "importHelpers": true,
     "removeComments": true,
-    "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "ES2022",
-    "sourceMap": false,
+    "target": "es2017",
+    "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
-    "lib": ["es2022"]
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.jpg", "**/*.webp"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.jpg", "**/*.webp", "dist"]
 }
