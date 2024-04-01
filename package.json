@@ -18,6 +18,10 @@
     "type": "git",
     "url": "https://github.com/pedromneto97/nestjs-webp-converter"
   },
+  "homepage": "https://github.com/pedromneto97/nestjs-webp-converter/readme.md",
+  "bugs": {
+    "url": "https://github.com/pedromneto97/nestjs-webp-converter/issues"
+  },
   "keywords": [
     "nestjs",
     "webp",
