@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "webp-converter": {
+      "type": "library",
+      "root": ".",
+      "entryFile": "index",
+      "sourceRoot": "./src",
+      "compilerOptions": {
+        "tsConfigPath": "./tsconfig.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}

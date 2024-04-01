@@ -1,0 +1,38 @@
+{
+  "name": "webp-converter",
+  "version": "0.0.1",
+  "description": "NestJS module to convert images to webp",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Pedro de Mattos Mariano Mendes Neto",
+    "email": "pedromneto97@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^9.0.0 || ^10.0.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.2",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^9.0.0 || ^10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": {
+      "optional": false
+    }
+  }
+}
