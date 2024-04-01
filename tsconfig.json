@@ -13,9 +13,9 @@
     "target": "ES2022",
     "sourceMap": false,
     "outDir": "./dist",
-    "rootDir": "./lib",
-    "lib": ["es7", "DOM"]
+    "rootDir": "./src",
+    "lib": ["es2022"]
   },
-  "include": ["lib/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.jpg", "**/*.webp"]
 }
